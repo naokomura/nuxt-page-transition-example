@@ -30,5 +30,6 @@ export default {
   background: $white;
   border-bottom: solid 1px;
   padding: 16px 24px;
+  z-index: 9;
 }
 </style>

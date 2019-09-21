@@ -42,6 +42,34 @@ h2 {
 
 main {
   margin: 0 0 64px 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 414px;
+    height: 100vh;
+    background: rgba($black, 0.3);
+    position: fixed;
+    top: 0;
+    margin-left: -24px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 414px;
+    height: 100vh;
+    background: $white;
+    position: fixed;
+    top: 0;
+    margin-left: -24px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
 
   > img {
     width: 100%;
@@ -58,7 +86,7 @@ main {
 
 .page {
   &-enter-active {
-    transition: 0.4s ease;
+    transition: 0.38s cubic-bezier(.2,.68,.6,1);
     transform: translateX(414px);
     position: absolute;
     top: 0;
@@ -67,17 +95,21 @@ main {
   }
 
   &-enter-to {
-    transition: 0.4s ease;
+    transition: 0.38s cubic-bezier(.2,.68,.6,1);
     transform: translateX(0px);
 
     main {
       width: calc(100% - 48px);
       margin-top: calc(120px + 24px);
+
+      &::after {
+        opacity: 1;
+      }
     }
   }
 
   &-leave-active {
-    transition: 0.4s ease;
+    transition: 0.38s cubic-bezier(.2,.68,.6,1);
     transform: translateX(0px);
     position: absolute;
     top: 0;
@@ -87,11 +119,17 @@ main {
     main {
       width: calc(100% - 48px);
       margin-top: calc(120px + 24px);
+
+      &::before {
+        transition: 0.38s cubic-bezier(.2,.68,.6,1);
+        opacity: 1;
+      }
     }
   }
 
   &-leave-to {
-    transition: 0.4s ease;
-    transform: translateX(-414px);
+    transition: 0.38s cubic-bezier(.2,.68,.6,1);
+    transform: translateX(-120px);
+    opacity: 0.99;
   }
 }
