@@ -19,6 +19,10 @@ export default {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
+  pageTransition: {
+    name: 'page',
+    mode: ''
+  },
   /*
   ** Global CSS
   */
