@@ -1,0 +1,27 @@
+$black: #444;
+$white: #fff;
+
+html {
+  overscroll-behavior-y: none;
+  background: $black;
+
+  &.open-modal {
+    overflow: hidden;
+  }
+}
+
+body {
+  width: 100%;
+  max-width: 414px;
+  margin: 0 auto;
+  background: $white;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx) {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}
