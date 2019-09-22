@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar isChild label="Level 2" />
+    <NavBar isChild label="/test" />
     <main>
       <nav>
         <nuxt-link to="/">Home |</nuxt-link>
@@ -24,30 +24,6 @@ import NavBar from "~/components/NavBar";
 export default {
   components: {
     NavBar
-  },
-  transition: {
-    name: "",
-    mode: "",
-    beforeEnter(el) {
-      console.log("Hello transition");
-    }
-  },
-  data() {
-    return {
-      transitionType: ""
-    };
-  },
-  mounted() {
-    console.log(this.transitionType);
-  },
-  asyncData({ app }) {
-    console.log(app);
-
-    // if (from.path === "/level-3") {
-    //   this.transitionType = "test";
-    // } else {
-    //   this.transitionType = "page";
-    // }
   }
 };
 </script>

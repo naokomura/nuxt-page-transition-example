@@ -28,4 +28,7 @@ export default {
 </script>
 
 <style>
+nav {
+  margin-bottom: 32px;
+}
 </style>

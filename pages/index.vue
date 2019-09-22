@@ -3,7 +3,8 @@
     <NavBar label="HOME" />
     <main>
       <nav>
-        <nuxt-link to="/level-2">Level 2</nuxt-link>
+        <nuxt-link to="/level-2">Level 2 |</nuxt-link>
+        <nuxt-link to="/test/layer-test">test</nuxt-link>
       </nav>
       <img src="~/assets/images/sample-1.jpg" alt />
       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
@@ -23,11 +24,29 @@
 import NavBar from "~/components/NavBar";
 
 export default {
+  transition: {
+    name: "test",
+    mode: ""
+    // beforeEnter(el) {
+    //   console.log("My transition");
+    // }
+  },
   components: {
     NavBar
+  },
+  data() {
+    return {
+      name
+    };
+  },
+  asyncData({ from }) {
+    console.log(from.path);
   }
 };
 </script>
 
 <style>
+nav {
+  margin-bottom: 32px;
+}
 </style>
