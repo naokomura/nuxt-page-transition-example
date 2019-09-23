@@ -26,7 +26,7 @@ export default {
     NavBar
   },
   transition: {
-    name: "",
+    name: this.transitionType,
     mode: "",
     beforeEnter(el) {
       console.log("Hello transition");
@@ -34,11 +34,14 @@ export default {
   },
   data() {
     return {
-      transitionType: ""
+      transitionType: "test"
     };
   },
-  mounted() {
+  created() {
     console.log(this.transitionType);
+  },
+  mounted() {
+    console.log("mounted");
   },
   asyncData({ app }) {
     console.log(app);
